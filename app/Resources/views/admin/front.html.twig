@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    Admin
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="{{ path('admin_list_posts') }}"><button class="btn btn-block btn-lg btn-default">Articles</button></a>
+            <a href="{{ path('admin_list_users') }}"><button class="btn btn-block btn-lg btn-default">Users</button></a>
+            <a href="{{ path('admin_proifle') }}"><button class="btn btn-block btn-lg btn-primary">Profile</button></a>
+            <a href="{{ path('admin_logout') }}"><button class="btn btn-block btn-lg btn-danger">Logout</button></a>
+        </div>
+    </div>
+{% endblock %}
+
+

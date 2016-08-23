@@ -1,0 +1,16 @@
+{% extends '::_adminNav.html.twig' %}
+
+{% block body %}
+    <div>
+        {% for article in article %}
+            <h1>{{ article.title }}</h1>
+            <h3>{{ article.dateAdded }}</h3>
+            <p>{{ article.description }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block title %}
+    Admin - {{ title }}
+{% endblock %}
+

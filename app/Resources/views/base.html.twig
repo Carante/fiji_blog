@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}Fiji Blog!{% endblock %}</title>
+
+        {% block stylesheets %}
+            <!-- Normanlize -->
+            <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+
+            <!-- Bootstrap -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+            <!-- FontAwesome -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+            <!-- JQuery -->
+            <link rel="stylesheet"
+                  href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+            <!-- SweetAlert -->
+            <link rel="stylesheet" type="text/css"
+                  href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block searchbar %}
+        <div class="search-bar">
+            <form method="GET" action="" class="js-sea-search sea-search">
+                <input type="search" name="q" placeholder="Search Sea Creatures" autocomplete="off" class="search-input">
+            </form>
+        </div>
+        {% endblock %}
+
+        {% block sidebar %}
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="menu">
+                        <a href="{{ path('home') }}" title="home"><i class="fa fa-home"></i></a><a href="{{ path('admin_front') }}"><i class="fa fa-key" title="admin-login"></i></a><a href="#" class="js-header-search-toggle"><i class="fa fa-search"></i></a>
+                    </li>
+                    <li>
+                        <a href="{{ path('show_article', {'articleId': '1'}) }}"><h3>Blog Post 1</h3></a>
+                    </li>
+                    <li>
+                        <a href="{{ path('show_article', {'articleId': '2'}) }}"><h3>Blog Post 2</h3></a>
+                    </li>
+                    <li>
+                        <a href="{{ path('show_article', {'articleId': '3'}) }}"><h3>Blog Post 3</h3></a>
+                    </li>
+                </ul>
+            </div>
+        {% endblock %}
+
+        <div id="wrapper">
+            <div id="main-content">
+                {% block secondNav %}{% endblock %}
+                    <div id="page-content-wrapper">
+                        <div class="container-fluid">
+                            {% block body %}
+
+                            {% endblock %}
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        {% block javascripts %}
+            <!-- JQuery -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+            <!-- Latest compiled and minified JavaScript bootstrap -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+            <script src="{{ asset('js/main.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

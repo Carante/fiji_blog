@@ -1,0 +1,26 @@
+{% extends '::base.html.twig' %}
+
+{% block secondNav %}
+    <div class="navbar-static-top navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="collapsed navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-8" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="{{ path('admin_front') }}" class="navbar-brand"><i class="fa fa-long-arrow-left"></i> Go back</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-8">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{{ path('admin_list_posts') }}">Articles</a></li>
+                    <li><a href="{{ path('admin_list_users') }}">Users</a></li>
+                    <li><a href="{{ path('admin_proifle') }}">Profile</a></li>
+                    <li><a href="{{ path('admin_logout') }}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

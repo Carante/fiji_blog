@@ -1,0 +1,32 @@
+{% extends '::_adminNav.html.twig' %}
+
+{% block title %}
+    Admin - list posts
+{% endblock %}
+
+{% block body %}
+
+    <table class="table table-striped">
+        <thead>
+        <tr class="bg-info">
+            <th>Date added</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.dateAdded }}</td>
+                <td>{{ article.title }}</td>
+                <td>{{ article.description }}</td>
+                <td><a href="{{ path('admin_post', {'postId': article.id}) }}"><button class="btn btn-success">Edit</button></a></td>
+                <td><a href=""><button class="btn btn-danger">Delete</button></a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

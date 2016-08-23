@@ -1,0 +1,32 @@
+{% extends '::_adminNav.html.twig' %}
+
+{% block title %}
+    Admin - list posts
+{% endblock %}
+
+{% block body %}
+
+    <table class="table table-striped">
+        <thead>
+        <tr class="bg-info">
+            <th>Username</th>
+            <th>Admin</th>
+            <th>Email address</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{% if user.admin == true %}Yes{% else %}No{% endif %}</td>
+                <td>{{ user.email }}</td>
+                <td><a href="">
+                        <button class="btn btn-danger">Delete</button>
+                    </a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
